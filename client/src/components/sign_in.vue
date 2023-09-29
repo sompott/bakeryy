@@ -5,9 +5,9 @@
         <div class="card">
           <div class="card-body">
             <div class="text-center">
-              <img src="/path/src/assets/Usericon.jpg" alt="Logo" class="mb-4" style="width: 150px; height: 150px;">
+              <img src="@/assets/usericon.jpg" alt="Logo" class="img-fluid mx-auto d-block" style="width: 150px; height: 150px; border-radius: 50%;">
 
-            </div>
+             </div>
             <h2 class="text-center mb-4">Wellcome to Bakery Lover</h2>
             <form @submit.prevent="sign_in">
               <div class="form-group">
@@ -16,12 +16,14 @@
               <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" v-model="password" required>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              <button v-on:click="navigateTo('/mainwep')">Log In</button>
+
               <div class="text-center mt-3">
               </div>
               <hr>
               <div class="text-center">
                 <button @click="navigateToSignUp">Sign Up</button>
+                
 
 
 
@@ -57,6 +59,13 @@ export default {
 </script>
 
 <style>
+/* ตั้งค่าสีหลักและสีรองของหน้าเว็บ */
+:root {
+  --primary-color: #3498db; /* สีหลัก */
+  --secondary-color: #e74c3c; /* สีรอง */
+}
+
+/* ส่วนของคอนเทนเนอร์หลัก */
 .container {
   display: flex;
   justify-content: center;
@@ -64,21 +73,24 @@ export default {
   height: 100vh;
 }
 
+/* ส่วนของการ์ดหลัก */
 .card {
   width: 700px;
+  margin: 0 auto;
   border: none;
+  padding: 20px;
   box-shadow: 0px 0px 10px 0px rgba(114, 97, 59, 0.2);
-  background-color: rgba(255, 255, 255, 0.9); /* เปลี่ยนสีของกรอบที่นี่และตั้งค่าความโปร่งใสที่นี่ */
-  border-radius: 15px; /* ตั้งค่าความโค้งของกรอบที่นี่ */
+  background-color: #fff; /* สีของการ์ดเป็นสีขาว */
+  border-radius: 15px;
+  text-align: center; /* จัดเนื้อหาตามศูนย์ */
 }
 
-
-
-
+/* ส่วนของส่วนเนื้อหาในการ์ด */
 .card-body {
   padding: 20px;
 }
 
+/* ส่วนของกล่องข้อมูล (form) */
 .form-group {
   margin-bottom: 20px;
 }
@@ -89,18 +101,19 @@ export default {
   border-radius: 5px;
 }
 
+/* ปุ่มสีหลัก */
 .btn-primary {
-  background-color: #61615b;
-  color: rgb(255, 255, 255);
+  background-color: var(--primary-color);
+  color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 18px;
   border-radius: 5px;
+  transition: background-color 0.3s; /* เพิ่มการเปลี่ยนสีเมื่อโฮเวอร์ */
 }
 
 .btn-primary:hover {
-  background-color: #373023;
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
-
 </style>
