@@ -22,27 +22,30 @@
 </template>
 
 <script>
-
+import breadImage from '../assets/food.png';
+import cookieImage from '../assets/cookie.png';
+import cakeImage from '../assets/cake.png';
 export default {
+  
   data() {
     return {
       categoryItems: [
         {
-          name: 'Bread',
+          name: 'Bread1',
           description: 'ขนมปัง',
-          imageURL: '../assets/ขนม.jpg',
+          imageURL : breadImage,
         },
 
         {
           name: 'Cake',
           description: 'เค้ก',
-          image: './assets/padthai.jpg',
+          imageURL: cakeImage,
         },
 
         {
           name: 'Cookie',
           description: 'คุกกี้',
-          image: '@/assets/padthai.jpg',
+          imageURL: cookieImage,
         },
 
         {
@@ -83,6 +86,12 @@ export default {
 </script>
 
 <style scoped>
+.item-image{
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+
+}
 .category {
   font-family: 'Arial', sans-serif;
   text-align: center;

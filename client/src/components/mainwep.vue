@@ -38,6 +38,8 @@
     <!-- เนื้อหาหน้าหลัก (main) -->
     <div v-if="activePage === 'main'" class="page-content">
       <h1>Main Page</h1>
+      <!-- บันทัดนี้เลยค้าบบบ -->
+      <img src="../assets/savenote.png" /> 
       <!-- เนื้อหาหน้าหลักของคุณไปที่นี่ -->
     </div>
 
